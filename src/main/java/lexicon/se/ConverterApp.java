@@ -2,13 +2,10 @@ package lexicon.se;
 
 public class ConverterApp {
     static void main() {
-        //keep the menu working until the user types "EXIT"
-        /*while(true){
-            String option= IO.readln();
 
-        }*/
+        Convert convert= new Convert();
+
         printMenu();
-        IO.println("Choose an option: ");
         //take input from user
         int itemNumber = Integer.parseInt(IO.readln("Choose an option: ").trim());
         boolean wantsToContinue= IO.readln("Continue (yes/no)").trim().equalsIgnoreCase("yes");
@@ -17,6 +14,20 @@ public class ConverterApp {
 
         switch (itemNumber){
             case 1 ->{
+                IO.println("--- Temperature Converter ---");
+                IO.println("Convert: ");
+                IO.println("1. Celsius to Fahrenheit");
+                IO.println("2. Fahrenheit to Celsius");
+                int tempChoice = Integer.parseInt(IO.readln("Your choice: "));
+                if(tempChoice == 1){
+                    convert.celsius = Integer.parseInt(IO.readln("Enter temperature in Celsius: ").trim());
+                    double celsiusToFahrenheit=convert.celsiusToFahrenheit();
+                    IO.println(celsiusToFahrenheit);
+                }else if (tempChoice==2){
+                    convert.fahrenheit = Integer.parseInt(IO.readln("Enter temperature in Fahrenheit: ").trim());
+                    double fahrenheitToCelsius= convert.fahrenheitToCelsius();
+                    IO.println(fahrenheitToCelsius);
+                }
 
             }
             case 2 ->{
