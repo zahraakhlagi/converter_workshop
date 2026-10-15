@@ -31,7 +31,28 @@ public class ConverterApp {
 
             }
             case 2 ->{
+                IO.println("--- Currency Converter ---");
+                IO.println("Convert:");
+                IO.println("1. SEK to USD");
+                IO.println("2. SEK to EUR");
 
+                int currencyChoice = Integer.parseInt(
+                        IO.readln("Your choice: ").trim()
+                );
+
+                double sek = Double.parseDouble(
+                        IO.readln("Enter amount in SEK: ").trim()
+                );
+
+                if (currencyChoice == 1) {
+                    double usd = sek / 10.87;
+                    IO.println(String.format("%.2f SEK = %.2f USD", sek, usd));
+                } else if (currencyChoice == 2) {
+                    double eur = sek / 11.32;
+                    IO.println(String.format("%.2f SEK = %.2f EUR", sek, eur));
+                } else {
+                    IO.println("Invalid choice.");
+                }
             }
             case 3 ->{
 
